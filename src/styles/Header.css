@@ -1,0 +1,11 @@
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
+    background-color: #000049;
+    color: white;
+    font-weight: bolder;
+    font-size: 4rem;
+}
