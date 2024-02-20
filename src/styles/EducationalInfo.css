@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Kanit&family=Lato:wght@300;400&family=Open+Sans&family=Roboto:wght@400;500&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&display=swap');
+
+.education-container{
+    width: 30vw;
+    height: 46vh;
+    background-color: #f5f5f5;
+    border-radius: 0.7rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.header-educational-info{
+    display: flex;
+    justify-content: center;
+    font-size: 2.3rem;
+    font-family: 'Rubik', sans-serif;
+    color: #000049;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#edu-Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+input{
+    width: 25vw;
+    height: 5vh;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+}
+
+label{
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: #757575;
+}
+input[type="date"]{
+    height: 5vh;
+    width: 9vw;
+    font-family: 'Rubik', sans-serif;
+}
+input[type="text"],input[type="email"],input[type="tel"]{
+    padding-left: 0.5rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+.years{
+    display: flex;
+    gap: 8rem;
+}
+select{
+    border: none;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+}
+button{
+    width: 25vw;
+    background-color: #20ff93;
+    border: none;
+    height: 5vh;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 15px;
+}
+button:hover{
+    background-color: #07f680;
+}
+button:active{
+    transform: scale(0.99);
+}
+
+option{
+    font-weight: bold;
+}
+option:target{
+    font-weight: bolder;
+}

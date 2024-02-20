@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Kanit&family=Lato:wght@300;400&family=Open+Sans&family=Roboto:wght@400;500&family=Rubik&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&display=swap');
+
+.cv-container{
+    width: 45vw;
+    height: 144vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 1rem;
+}
+
+.header-cv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #000049;
+    font-weight: bold;
+    width: 100%;
+    height: 18%;
+    color: white;
+    padding-top: 1rem;
+}
+
+.Name{
+    font-size: 40px;
+}
+
+.phoneNumber,.email,.City{
+    font-size: 19px;
+}
+
+.Education-info,.Experience-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.education-header,.experience-header{
+    font-family: 'Rubik', sans-serif;
+    font-weight: bolder;
+    font-size: 19px;
+    color: #000049;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43vw;
+    height: 5vh;
+    background-color: #c5dbf6;
+    border-radius: 0.5rem;
+}
+
+.edu-content,.exp-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+    height: 6vh;
+    background-color: #e8e8e8;
+
+}
+
+.uni-name,.company-name{
+    display: flex;
+    gap: 2rem;
+    font-weight: bold;
+
+}
