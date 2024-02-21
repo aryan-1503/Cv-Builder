@@ -1,18 +1,11 @@
+//Cv.jsx
 import  './../styles/Cv.css'
 import {useContext} from "react";
 import {GeneralContext} from "../App.jsx";
 
-function EducationCard({uniName,start,end,uniCity}){
-    return (
-        <div className="uni-name">
-            {uniName}
-            <span className="start-end">{start}-{end}</span>
-            <span className="City">{uniCity}</span>
-        </div>
-    )
-}
 
-export default function Cv() {
+
+export default function Cv({ educationalInfo }) {
     const {fullName,phoneNumber,Email,City} = useContext(GeneralContext)
     return (
         <div className='cv-container'>
@@ -26,9 +19,18 @@ export default function Cv() {
                 <div className="education-header">
                     Education
                 </div>
-                <div className="edu-content">
-                    <EducationCard uniName='Pandit Deendayal Energy University' start='2021' end='2025' uniCity='Gandhinagar'/>
-                </div>
+                {educationalInfo.map((edu, index) => (
+                    <div key={index} className="edu-content">
+                        <div className="uni-name">
+                            {edu.uniName}
+                            <span>{edu.course}</span>
+                            <span className="start-end">
+                                {edu.startYear}-{edu.endYear}
+                            </span>
+                            <span className="City">{edu.city}</span>
+                        </div>
+                    </div>
+                ))}
             </div>
             <div className="Experience-info">
                 <div className="experience-header">

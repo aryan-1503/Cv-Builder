@@ -1,10 +1,12 @@
+//App.jsx
 import './App.css'
 import Header from './Components/Header'
 import GeneralInfo from "./Components/GeneralInfo.jsx";
 import EducationalInfo from "./Components/EducationalInfo.jsx";
 import ExperienceInfo from "./Components/ExperienceInfo.jsx";
 import Cv from "./Components/Cv.jsx";
-import {createContext, useState} from "react";
+import {createContext, createRef, useRef, useState} from "react";
+
 
 export const GeneralContext = createContext({
     fullName: '',
@@ -16,16 +18,6 @@ export const GeneralContext = createContext({
     handleEmailChange: () => {},
     handleCityChange: () => {},
 })
-
-export const EducationContext = createContext({
-    UniName: '',
-    Course: '',
-    Start: '',
-    End: '',
-    UniCity: '',
-    handleEducationSubmit: () => {},
-})
-
 
 
 function App() {
@@ -46,9 +38,19 @@ function App() {
         setCity(e.target.value);
     }
 
+    const [educationalInfo, setEducationalInfo] = useState([]);
+    const handleEducationalInfoChange = (info) => {
+        setEducationalInfo([...educationalInfo, info]);
+    };
+
+    const [experienceInfo, setExperienceInfo] = useState([]);
+    const handleExperienceInfoChange = (info) => {
+        setExperienceInfo([...educationalInfo, info]);
+    };
+
+
   return (
     <>
-
         <div className="header">
            <Header />
         </div>
@@ -61,7 +63,7 @@ function App() {
 
                 </div>
                 <div>
-                    <EducationalInfo />
+                    <EducationalInfo onEducationalInfoChange={handleEducationalInfoChange}/>
                 </div>
                 <div>
                     <ExperienceInfo />
@@ -69,7 +71,7 @@ function App() {
             </div>
             <div className="cv-container">
                 <GeneralContext.Provider value={{fullName,phoneNumber,Email,City,handleFullNameChange ,handlePhoneNumberChange ,handleEmailChange ,handleCityChange}}>
-                    <Cv />
+                    <Cv educationalInfo={educationalInfo}/>
                 </GeneralContext.Provider>
             </div>
         </div>
