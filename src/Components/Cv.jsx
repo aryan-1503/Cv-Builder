@@ -5,7 +5,7 @@ import {GeneralContext} from "../App.jsx";
 
 
 
-export default function Cv({ educationalInfo }) {
+export default function Cv({ educationalInfo,experienceInfo }) {
     const {fullName,phoneNumber,Email,City} = useContext(GeneralContext)
     return (
         <div className='cv-container'>
@@ -36,14 +36,18 @@ export default function Cv({ educationalInfo }) {
                 <div className="experience-header">
                     Experience
                 </div>
-                <div className="exp-content">
-                    <div className="company-name">
-                        Company XYZ
-                        <span className="start-end">2021-2025</span>
-                        <span className="position">Developer</span>
-                        <span className="res">Your responsibility</span>
+                {experienceInfo.map((exp, index) => (
+                    <div key={index} className="exp-content">
+                        <div className="company-name">
+                            {exp.companyName}
+                            <span className="start-end">
+                                {exp.startYear}-{exp.endYear}
+                            </span>
+                            <span className="position">{exp.position}</span>
+                            <span className="res">{exp.responsibilities}</span>
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
         </div>
 

@@ -45,7 +45,7 @@ function App() {
 
     const [experienceInfo, setExperienceInfo] = useState([]);
     const handleExperienceInfoChange = (info) => {
-        setExperienceInfo([...educationalInfo, info]);
+        setExperienceInfo([...experienceInfo, info]);
     };
 
 
@@ -66,12 +66,12 @@ function App() {
                     <EducationalInfo onEducationalInfoChange={handleEducationalInfoChange}/>
                 </div>
                 <div>
-                    <ExperienceInfo />
+                    <ExperienceInfo onExperienceInfoChange={handleExperienceInfoChange} />
                 </div>
             </div>
             <div className="cv-container">
                 <GeneralContext.Provider value={{fullName,phoneNumber,Email,City,handleFullNameChange ,handlePhoneNumberChange ,handleEmailChange ,handleCityChange}}>
-                    <Cv educationalInfo={educationalInfo}/>
+                    <Cv educationalInfo={educationalInfo} experienceInfo={experienceInfo} />
                 </GeneralContext.Provider>
             </div>
         </div>
